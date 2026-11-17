@@ -1,0 +1,31 @@
+:root{color-scheme:light;font:16px/1.55 system-ui,sans-serif;color:#253832;background:#fdf8f6}
+*{box-sizing:border-box}
+body{margin:0}
+header{position:sticky;top:0;background:#3d524a;color:white;z-index:1}
+.shell{width:min(100% - 2rem,880px);margin:auto}
+.masthead{display:flex;min-height:60px;align-items:center;justify-content:space-between;gap:1rem;font-weight:700}
+#timer{font-variant-numeric:tabular-nums;background:#fdf8f6;color:#253832;padding:.2rem .65rem;border-radius:5px}
+main{padding:2rem 0 4rem}
+h1,h2,h3{line-height:1.14}
+h1{font-size:clamp(1.95rem,5vw,3.25rem);margin:.1em 0 .35em;letter-spacing:-.04em}
+h2{margin-top:1.4em}
+p{max-width:68ch}
+.panel,fieldset,details{background:white;border:1px solid #d6dfd9;border-radius:12px;padding:1.1rem;margin:1rem 0}
+.stimulus{white-space:pre-wrap;background:#edf3ef;border-left:4px solid #6c9585;padding:1rem;margin:1rem 0}
+.scene{width:min(100%,350px);aspect-ratio:3/4;background: url('./media/scenes.jpg') no-repeat;background-size:400% 200%;border-radius:8px}
+button,.button{background:#3d524a;color:white;border:1px solid #3d524a;border-radius:6px;font:inherit;font-weight:650;padding:.5em .9em;cursor:pointer;text-decoration:none}
+button.secondary{background:white;color:#253832}
+button:disabled{opacity:.55;cursor:default}
+button:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid #924856;outline-offset:3px}
+nav,.actions{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;margin-top:1rem}
+fieldset{min-width:0;padding-top:.5rem}
+legend{font-weight:700;max-width:100%}
+label.option{display:flex;gap:.55rem;align-items:baseline;padding:.4rem;border-radius:5px;cursor:pointer}
+label.option:has(:checked){background:#e3eee8}
+textarea{font:inherit;width:100%;padding:.7rem;min-height:12rem;border:1px solid #789287;border-radius:6px}
+progress{width:100%;accent-color:#3d524a}
+audio{display:block;margin:.65rem 0;max-width:100%}
+small,.muted{color:#4c6259}
+table{border-collapse:collapse;width:100%}
+th,td{text-align:left;padding:.45rem;border-bottom:1px solid #d6dfd9}
+summary{cursor:pointer;font-weight:650}
