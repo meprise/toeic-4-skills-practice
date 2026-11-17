@@ -120,9 +120,12 @@ function ready() {
   const msg = el('p',undefined,{role:'status'});
   const microphone = btn('Enable microphone and start', async () => {
     microphone.disabled = true;
+    msg.textContent = 'Waiting for microphone permission. You can also start and speak to your teacher live.';
     try {
       if (!window.MediaRecorder || !navigator.mediaDevices) throw Error();
-      stream = await navigator.mediaDevices.getUserMedia({audio:true});
+      const candidate = await navigator.mediaDevices.getUserMedia({audio:true});
+      if (!app.contains(microphone)) { candidate.getTracks().forEach(track => track.stop()); return; }
+      stream = candidate;
       const check = new MediaRecorder(stream);
       check.start();
       check.stop();
@@ -133,7 +136,7 @@ function ready() {
       msg.textContent = 'Microphone access failed. Check your browser permissions or speak to your teacher live.';
     }
   });
-  actions(microphone, btn('Speak live to teacher', () => { if (!microphone.disabled) begin(); }, true));
+  actions(microphone, btn('Speak live to teacher', begin, true));
   app.append(msg);
 }
 function objective() {
